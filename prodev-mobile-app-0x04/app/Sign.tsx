@@ -1,91 +1,76 @@
-import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
-import { router } from 'expo-router';
-import { styles } from '../styles/_joinstyle';
-import { HEROLOGOGREEN, GOOGLELOGO, FACEBOOKLOGO } from '../constants';
-import { useState } from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { Text, View, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 
-export default function SignIn() {
-  const [showPassword, setShowPassword] = useState(false);
+export default function Sign() {
+  return(
+<View style={{ position: "absolute", bottom: 0, width: "100%" }}>
+  <View style={styles.buttonGroup}>
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.iconsection}>
-        <TouchableOpacity onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <Image source={HEROLOGOGREEN} />
-      </View>
-
-      <View style={styles.titleTextGroup}>
-        <Text style={styles.titleText}>Welcome Back!</Text>
-        <Text style={styles.subText}>Sign in to access your account</Text>
-      </View>
-
-      <View style={styles.formGroup}>
-        <View>
-          <Text style={styles.formLabel}>Email Address</Text>
-          <TextInput 
-            style={styles.formControl}
-            placeholder="Enter your email"
-            keyboardType="email-address"
-          />
-        </View>
-
-        <View>
-          <Text style={styles.formLabel}>Password</Text>
-          <View style={styles.formPasswordControl}>
-            <TextInput 
-              style={styles.passwordControl}
-              placeholder="Enter your password"
-              secureTextEntry={!showPassword}
-            />
-            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-              <Ionicons 
-                name={showPassword ? "eye-off" : "eye"} 
-                size={24} 
-                color="gray" 
-              />
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <TouchableOpacity style={styles.primaryButton}>
-        <Text style={styles.buttonText}>Sign In</Text>
-      </TouchableOpacity>
-
-      <View style={styles.dividerGroup}>
-        <View style={styles.divider} />
-        <Text style={styles.dividerText}>or</Text>
-        <View style={styles.divider} />
-      </View>
-
-      <View style={styles.secondaryButtonGroup}>
-        <TouchableOpacity 
-          style={[styles.secondaryButton, { borderColor: '#E9E9E9' }]}
-        >
-          <Image source={GOOGLELOGO} />
-          <Text style={styles.secondaryButtonText}>Continue with Google</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-          style={[styles.secondaryButton, { borderColor: '#E9E9E9' }]}
-        >
-          <Image source={FACEBOOKLOGO} />
-          <Text style={styles.secondaryButtonText}>Continue with Facebook</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.signupgroup}>
-        <Text style={styles.signupTitleText}>Don't have an account? </Text>
-        <TouchableOpacity onPress={() => router.push('/join')}>
-          <Text style={styles.signupSubTitleText}>Join Now</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+  <TouchableOpacity style={styles.transparentButton}>
+      <Text style={styles.textSmall}>Sign In</Text>
+    </TouchableOpacity>
+  </View>
+  </View>
+  ) 
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  background: {
+    flex: 1,
+    justifyContent: "center",
+    width: "100%",
+    height: Dimensions.get("window").height,
+  },
+  companyLogo: {
+    width: "100%",
+    alignItems: "center",
+    padding: 20,
+    marginBottom: 50,
+  },
+  textGroup: {
+    alignItems: "center",
+  },
+  textLarge: {
+    color: "white",
+    fontWeight: "800",
+    fontSize: 40,
+    textAlign: "center",
+    marginBottom: 12,
+  },
+  textSmall: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "200",
+    textAlign: "center",
+  },
+  transparentButton: {
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 40,
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    alignItems: "center",
+    fontSize: 20,
+    flex: 1,
+  },
+  button: {
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 40,
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    alignItems: "center",
+    fontSize: 20,
+    backgroundColor: "white",
+    flex: 1,
+  },
+  buttonGroup: {
+    flexDirection: "row",
+    gap: 20,
+    paddingHorizontal: 20,
+  },
+});
+
+
