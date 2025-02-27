@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, Image, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import ButtonsContainer from "./buttonsContainer";
 
 export default function Index() {
   return (
@@ -25,6 +26,8 @@ export default function Index() {
               <View style={{ alignItems: "center", paddingVertical: 20 }}>
                 <Text style={{ color: "white" }}>Continue to home</Text>
               </View>
+                  {/* Import the Join component */}
+            <ButtonsContainer />
             </View>
         </ImageBackground>
       </SafeAreaView>

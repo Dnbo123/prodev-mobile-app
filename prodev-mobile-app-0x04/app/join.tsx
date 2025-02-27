@@ -1,16 +1,11 @@
 import { Text, View, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 
-
 export default function Join() {
- return(
-  <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
-  <View style={styles.buttonGroup}>
+  return(
     <TouchableOpacity style={styles.button}>
       <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
     </TouchableOpacity>
-  </View>
-  </View>
- ) 
+  )
 }
 
 const styles = StyleSheet.create({
@@ -70,7 +65,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 20,
     paddingHorizontal: 20,
+    marginBottom: 20, // Added margin for better spacing
   },
 });
-  
- 
