@@ -1,13 +1,13 @@
 import { Text, View } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import { ImageBackground, Dimensions, View, Text, TouchableOpacity, Image } from "react-native";
+import { ImageBackground, Dimensions, TouchableOpacity, Image } from "react-native";
 
 export default function Index() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex:1 }}>
         <ImageBackground
-        source={require("@/assets/images/background-image.png")}
+        source={require("@/assets/images/hero-icon.png")}
         style={styles.background}
         >
     <View
